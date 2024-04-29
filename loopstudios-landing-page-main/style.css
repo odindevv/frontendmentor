@@ -1,0 +1,459 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Figtree:ital,wght@0,300..900;1,300..900&family=Inter:wght@100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --White: hsl(0, 0%, 100%);
+    --Black: hsl(0, 0%, 0%);
+    --Dark-Gray: hsl(0, 0%, 55%);
+    --Very-Dark-Gray: hsl(0, 0%, 41%);
+    --Josefin: "Josefin Sans",sans-serif;
+    --Alata: "Alata",sans-serif;
+}
+
+
+
+.loopstudios{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 4fr 1fr;
+    grid-template-areas: 
+    "hero hero hero"
+    "founder founder founder"
+    "creations creations creations"
+    "footer footer footer";
+    height: 200vh;
+}
+
+.loopstudios__hero{
+    grid-area: hero;
+    padding: 70px 150px;
+    font-family: var(--Alata);
+    color: #fff;
+    z-index: 1;
+    position: relative;
+    background-color: #000;
+
+}
+
+.loopstudios__hero:before{
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: url("./images/desktop/image-hero.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 50%;
+}
+
+
+.hero__nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.hero__menu{
+    list-style: none;
+}
+
+.hero__menu li{
+    display: inline-block;
+    font-weight: 400;
+    margin-left: 15px;
+    font-size: 18px;
+    position: relative;
+}
+
+
+.hero__menu a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.selected:hover::before{
+    content: "";
+    position: absolute;
+    bottom: -22px;
+    left: 25%;
+    width: 30px;
+    height: 2px;
+    border-radius: 50px;
+    background-color: #fff;
+}
+
+.hero__texts{
+    min-width: 50%;
+    max-width: 700px;
+    border: 2px solid;
+    font-family: var(--Josefin);
+    font-weight: 300;
+    text-transform: uppercase;
+    padding: 40px;
+    line-height: 1.2;
+    /* margin-top: 110px; */
+    margin-top: 10%;
+}
+
+.hero__title{
+    width: 60%;
+    font-size: 80px;
+    font-family: var(--Josefin);
+    font-weight: 300;
+}
+
+/* Founder */
+
+.loopstudios__founder{
+    grid-area: founder;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 90px;
+    background-color: var(--White);
+    position: relative;
+}
+
+.founder__picture{
+    width: 100%;
+    max-width: 1100px;
+    background-color: red;
+}
+
+.founder__img{
+    width: 100%;
+}
+
+.founder__info{
+    width: 900px;
+    height: 500px;
+    background-color: var(--White);
+    z-index: 50;
+    position: relative;
+    top: 25%;
+    right: 150px;
+    padding: 70px;
+}
+
+
+.founder__title{
+    font-family: var(--Josefin);
+    font-weight: 300;
+    font-size: 50px;
+    width: 100%;
+    text-transform: uppercase;
+}
+
+.founder__paragraph{
+    margin-top: 30px;
+    color: var(--Dark-Gray);
+    font-family: var(--Alata);
+    font-weight: 500;
+}
+
+.founder__img{
+    display: block;
+}
+
+.loopstudios__creations{
+    grid-area: creations;
+    padding: 70px 150px;
+}
+
+.creations__top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.creations__title{
+    font-family: var(--Josefin);
+    font-weight: 300;
+    font-size: 50px;
+    text-transform: uppercase;
+}
+
+.creations__cta{
+    padding: 10px 48px;
+    border: 2px solid #000;
+    text-transform: uppercase;
+    font-family: var(--Alata);
+    font-weight: 600;
+    letter-spacing: 0.2ch;
+    cursor: pointer;
+}
+
+.creations__cta:hover{
+    background-color: #000;
+    color: #fff;
+    transition: 0.8s all ease;
+}
+
+.creations__conteiner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+.creations__box{
+    height: 680px;
+    margin: 10px;
+    flex-grow: 1;
+    width: calc(90% * (1/4) - 10px - 1px);
+    font-size: 35px;
+    color: var(--White);
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    background-color: #000;
+    cursor: pointer;
+
+}
+
+.creations__box h1{
+    font-family: var(--Josefin);
+    font-weight: 300;
+    padding: 40px;
+    width: 70%;
+}
+
+.deep-earth::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    opacity: 50%;
+    background-image: url("./images/desktop/image-deep-earth.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.deep-earth:hover{
+    background-color: #ffffffad;
+    transition: 1s all ease;
+}
+
+.night-arcade:hover{
+    background-color: #ffffffad;
+    transition: 1s all ease;
+}
+
+.soccer-team-vr:hover{
+    background-color: #ffffffad;
+    transition: 1s all ease;
+}
+
+.the-grid:hover{
+    background-color: #ffffffad;
+    transition: 1s all ease;
+}
+
+.from-up-above-vr:hover{
+    background-color: #ffffffad;
+    transition: 1s all ease;
+}
+
+.pocket-borealis:hover{
+    background-color: #ffffffad;
+    transition: 1s all ease;
+}
+
+.the-curiosity:hover{
+    background-color: #ffffffad;
+    transition: 1s all ease;
+}
+
+.make-it-fisheye:hover{
+    background-color: #ffffffad;
+    transition: 1s all ease;
+}
+
+
+
+.night-arcade::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    opacity: 50%;
+    background-image: url("./images/desktop/image-night-arcade.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.soccer-team-vr::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    opacity: 50%;
+    background-image: url("./images/desktop/image-soccer-team.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.the-grid::before{
+        content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    opacity: 50%;
+    background-image: url("./images/desktop/image-grid.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.from-up-above-vr::before{
+        content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    opacity: 50%;
+    background-image: url("./images/desktop/image-from-above.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.pocket-borealis::before{
+        content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    opacity: 50%;
+    background-image: url("./images/desktop/image-pocket-borealis.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.the-curiosity::before{
+        content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    opacity: 50%;
+    background-image: url("./images/desktop/image-curiosity.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.make-it-fisheye::before{
+        content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    opacity: 50%;
+    background-image: url("./images/desktop/image-fisheye.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.loopstudios__footer{
+    grid-area: footer;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--Black);
+    color: var(--White);
+    padding: 60px 60px 50px 150px;
+    font-family: var(--Alata);
+    font-weight: 600;
+}
+
+.footer__top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer__top ul {
+    list-style: none;
+}
+
+.footer__top li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.footer__icon{
+    width: 30px;
+    height: 30px;
+}
+
+.footer__bottom{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+
+}
+
+.footer__bottom a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: 400;
+    font-size: 18px;
+    margin-right: 25px;
+}
+
+.footer__bottom p {
+    color: var(--Dark-Gray);
+}
+
+
+@media (max-width: 768px) {
+    .loopstudios{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 15% 15% 55% 15%;
+        grid-template-areas: 
+        "hero"
+        "founder"
+        "creations"
+        "footer";
+        background-color: orange;
+        min-height: 100vh;
+    }
+}
